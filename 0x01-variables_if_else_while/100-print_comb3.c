@@ -1,24 +1,26 @@
 #include <stdio.h>
 
 /**
- * main - main function
+ * main - Prints all possible different combination of two digits
  *
  * Return: Always 0 (Success)
+ *
  */
+
 int main(void)
 {
-	int i;
-	int j;
+	int ones = '0';
+	int tens = '0';
 
-	for (i = 0; i < 10; i++)
+	for (tens = '0'; tens <= '9'; tens++)
 	{
-		for (j = 1; j < 10; j++)
+		for (ones = '0'; ones <= '9'; ones++)
 		{
-			if (i < j && i != j)
+			if (!((ones == tens) || (tens > ones)))
 			{
-				putchar(i + '0');
-				putchae(j + '0');
-				if (i + j != 17)
+				putchar(tens);
+				putchar(ones);
+				if (!(ones == '9' && tens == '8'))
 				{
 					putchar(',');
 					putchar(' ');
